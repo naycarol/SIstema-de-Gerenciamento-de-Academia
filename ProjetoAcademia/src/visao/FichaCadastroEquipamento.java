@@ -31,9 +31,15 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
         jButtonCancelarEquipamento = new javax.swing.JButton();
         jLabelNomeEquipamento = new javax.swing.JLabel();
         jLabelCadastroEquipamento = new javax.swing.JLabel();
-        NomeAluno1 = new javax.swing.JTextField();
+        NomeEquipamento = new javax.swing.JTextField();
         jLabelSerialEquipamento = new javax.swing.JLabel();
-        NomeAluno2 = new javax.swing.JTextField();
+        NSerial = new javax.swing.JTextField();
+        try{
+            javax.swing.text.MaskFormatter serial = new javax.swing.text.MaskFormatter("##.###.###");
+
+            NSerial = new javax.swing.JFormattedTextField(serial);
+        }catch(Exception e){
+        }
         jLabelDescriçãoEquipamento = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DescApa = new javax.swing.JTextArea();
@@ -41,7 +47,7 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
         jLabelValorEquipamento = new javax.swing.JLabel();
         GarantiaEquipamento = new javax.swing.JLabel();
         jLabelLocalEquipamento = new javax.swing.JLabel();
-        jtGaranto = new javax.swing.JTextField();
+        Garantia = new javax.swing.JTextField();
         Valorapa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -70,18 +76,18 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
         jLabelCadastroEquipamento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCadastroEquipamento.setText("Cadastro de Equipamentos");
 
-        NomeAluno1.addActionListener(new java.awt.event.ActionListener() {
+        NomeEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno1ActionPerformed(evt);
+                NomeEquipamentoActionPerformed(evt);
             }
         });
 
         jLabelSerialEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelSerialEquipamento.setText("Nº Serial:");
 
-        NomeAluno2.addActionListener(new java.awt.event.ActionListener() {
+        NSerial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno2ActionPerformed(evt);
+                NSerialActionPerformed(evt);
             }
         });
 
@@ -112,11 +118,11 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabelNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jLabelSerialEquipamento)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(NomeAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabelDescriçãoEquipamento)
                             .addGap(18, 18, 18)
@@ -139,7 +145,7 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(GarantiaEquipamento)
                         .addGap(18, 18, 18)
-                        .addComponent(jtGaranto, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -152,10 +158,10 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
                 .addComponent(jLabelCadastroEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNomeEquipamento)
                     .addComponent(jLabelSerialEquipamento)
-                    .addComponent(NomeAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
@@ -168,7 +174,7 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
                     .addComponent(jLabelValorEquipamento)
                     .addComponent(Valorapa, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GarantiaEquipamento)
-                    .addComponent(jtGaranto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLocalEquipamento)
@@ -192,13 +198,13 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
         FichaCadastroEquipamento.this.dispose();
     }//GEN-LAST:event_jButtonCancelarEquipamentoActionPerformed
 
-    private void NomeAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno1ActionPerformed
+    private void NomeEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeEquipamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno1ActionPerformed
+    }//GEN-LAST:event_NomeEquipamentoActionPerformed
 
-    private void NomeAluno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno2ActionPerformed
+    private void NSerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NSerialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno2ActionPerformed
+    }//GEN-LAST:event_NSerialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,10 +243,11 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DescApa;
+    private javax.swing.JTextField Garantia;
     private javax.swing.JLabel GarantiaEquipamento;
     private javax.swing.JTextField Local;
-    private javax.swing.JTextField NomeAluno1;
-    private javax.swing.JTextField NomeAluno2;
+    private javax.swing.JTextField NSerial;
+    private javax.swing.JTextField NomeEquipamento;
     private javax.swing.JTextField Valorapa;
     private javax.swing.JButton jButtonCancelarEquipamento;
     private javax.swing.JButton jButtonSalvarEquipamento;
@@ -251,6 +258,5 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSerialEquipamento;
     private javax.swing.JLabel jLabelValorEquipamento;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jtGaranto;
     // End of variables declaration//GEN-END:variables
 }

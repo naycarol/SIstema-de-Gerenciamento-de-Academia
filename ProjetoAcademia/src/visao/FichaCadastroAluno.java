@@ -27,6 +27,13 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        CelAluno = new javax.swing.JFormattedTextField();
+        try{
+            javax.swing.text.MaskFormatter celular = new javax.swing.text.MaskFormatter("(##)####-####");
+
+            CelAluno = new javax.swing.JFormattedTextField(celular);
+        }catch(Exception e){
+        }
         jLabelCadastroAluno = new javax.swing.JLabel();
         jLabelNomeAluno = new javax.swing.JLabel();
         jLabelEnderecoAluno = new javax.swing.JLabel();
@@ -39,15 +46,32 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jLabelSexoAluno = new javax.swing.JLabel();
         jButtonSalvarAluno = new javax.swing.JButton();
         jButtonCancelarAluno = new javax.swing.JButton();
+        CpfAluno = new javax.swing.JTextField();
+        try{
+            javax.swing.text.MaskFormatter cpf = new javax.swing.text.MaskFormatter("###.###.###-##");
+
+            CpfAluno = new javax.swing.JFormattedTextField(cpf);
+        }catch(Exception e){
+        }
         NomeAluno = new javax.swing.JTextField();
-        NomeAluno1 = new javax.swing.JTextField();
-        NomeAluno2 = new javax.swing.JTextField();
-        NomeAluno4 = new javax.swing.JTextField();
-        NomeAluno5 = new javax.swing.JTextField();
-        NomeAluno6 = new javax.swing.JTextField();
-        NomeAluno7 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        SexoAluno = new javax.swing.JTextField();
+        EndAluno = new javax.swing.JTextField();
+        CidAluno = new javax.swing.JTextField();
+        BairroAluno = new javax.swing.JTextField();
+        TelAluno = new javax.swing.JFormattedTextField();
+        try{
+            javax.swing.text.MaskFormatter telefone = new javax.swing.text.MaskFormatter("(##)####-####");
+
+            TelAluno = new javax.swing.JFormattedTextField(telefone);
+        }catch(Exception e){
+        }
+        jComboBox1 = new javax.swing.JComboBox();
+
+        CelAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CelAlunoActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -99,53 +123,43 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             }
         });
 
+        CpfAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CpfAlunoActionPerformed(evt);
+            }
+        });
+
         NomeAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomeAlunoActionPerformed(evt);
             }
         });
 
-        NomeAluno1.addActionListener(new java.awt.event.ActionListener() {
+        SexoAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno1ActionPerformed(evt);
+                SexoAlunoActionPerformed(evt);
             }
         });
 
-        NomeAluno2.addActionListener(new java.awt.event.ActionListener() {
+        EndAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno2ActionPerformed(evt);
+                EndAlunoActionPerformed(evt);
             }
         });
 
-        NomeAluno4.addActionListener(new java.awt.event.ActionListener() {
+        CidAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno4ActionPerformed(evt);
+                CidAlunoActionPerformed(evt);
             }
         });
 
-        NomeAluno5.addActionListener(new java.awt.event.ActionListener() {
+        BairroAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno5ActionPerformed(evt);
+                BairroAlunoActionPerformed(evt);
             }
         });
 
-        NomeAluno6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno6ActionPerformed(evt);
-            }
-        });
-
-        NomeAluno7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno7ActionPerformed(evt);
-            }
-        });
-
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
-            }
-        });
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manhã", "Tarde", "Noite" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,43 +176,44 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                             .addComponent(jLabelSexoAluno)
                             .addComponent(jLabelTelefoneAluno))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(NomeAluno4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NomeAluno2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(NomeAluno5, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabelBairroAluno)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButtonSalvarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NomeAluno6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addComponent(jButtonCancelarAluno)
-                                .addGap(28, 28, 28))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelCelularAluno)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NomeAluno7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(EndAluno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SexoAluno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(CidAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabelBairroAluno)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 94, Short.MAX_VALUE)
+                                        .addComponent(jButtonSalvarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(jButtonCancelarAluno)
+                                        .addGap(28, 28, 28))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(TelAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelCelularAluno)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BairroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelCPFAluno)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CpfAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,25 +226,25 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                 .addComponent(jLabelCadastroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNomeAluno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CpfAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCPFAluno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SexoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelSexoAluno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CidAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCidadeAluno)
                     .addComponent(jLabelBairroAluno)
-                    .addComponent(NomeAluno7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BairroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EndAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEnderecoAluno))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -241,52 +256,47 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TelAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelTelefoneAluno)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelCelularAluno))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelTurnoAluno)
-                            .addComponent(NomeAluno6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(71, Short.MAX_VALUE))))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(78, Short.MAX_VALUE))))
         );
 
         setSize(new java.awt.Dimension(566, 388));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NomeAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAlunoActionPerformed
+    private void CpfAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CpfAlunoActionPerformed
 
+    }//GEN-LAST:event_CpfAlunoActionPerformed
+
+    private void NomeAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAlunoActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_NomeAlunoActionPerformed
 
-    private void NomeAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno1ActionPerformed
+    private void SexoAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexoAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno1ActionPerformed
+    }//GEN-LAST:event_SexoAlunoActionPerformed
 
-    private void NomeAluno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno2ActionPerformed
+    private void EndAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EndAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno2ActionPerformed
+    }//GEN-LAST:event_EndAlunoActionPerformed
 
-    private void NomeAluno4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno4ActionPerformed
+    private void CidAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CidAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno4ActionPerformed
+    }//GEN-LAST:event_CidAlunoActionPerformed
 
-    private void NomeAluno5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno5ActionPerformed
+    private void BairroAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BairroAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno5ActionPerformed
+    }//GEN-LAST:event_BairroAlunoActionPerformed
 
-    private void NomeAluno6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno6ActionPerformed
+    private void CelAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CelAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno6ActionPerformed
-
-    private void NomeAluno7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno7ActionPerformed
-
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_CelAlunoActionPerformed
 
     private void jButtonSalvarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarAlunoActionPerformed
         // TODO add your handling code here:
@@ -332,17 +342,17 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BairroAluno;
+    private javax.swing.JFormattedTextField CelAluno;
+    private javax.swing.JTextField CidAluno;
+    private javax.swing.JTextField CpfAluno;
+    private javax.swing.JTextField EndAluno;
     private javax.swing.JTextField NomeAluno;
-    private javax.swing.JTextField NomeAluno1;
-    private javax.swing.JTextField NomeAluno2;
-    private javax.swing.JTextField NomeAluno4;
-    private javax.swing.JTextField NomeAluno5;
-    private javax.swing.JTextField NomeAluno6;
-    private javax.swing.JTextField NomeAluno7;
+    private javax.swing.JTextField SexoAluno;
+    private javax.swing.JFormattedTextField TelAluno;
     private javax.swing.JButton jButtonCancelarAluno;
     private javax.swing.JButton jButtonSalvarAluno;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabelBairroAluno;
     private javax.swing.JLabel jLabelCPFAluno;
     private javax.swing.JLabel jLabelCadastroAluno;

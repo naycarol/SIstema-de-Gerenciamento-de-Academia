@@ -5,6 +5,8 @@
  */
 package visao;
 
+
+
 /**
  *
  * @author Peter
@@ -27,45 +29,55 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NomeAluno6 = new javax.swing.JTextField();
         jLabelSexoProfessor = new javax.swing.JLabel();
-        NomeAluno7 = new javax.swing.JTextField();
+        BairroProfessor = new javax.swing.JTextField();
         jButtonSalvarProfessor = new javax.swing.JButton();
         jButtonCancelarProfessor = new javax.swing.JButton();
         jLabelNomeProfessor = new javax.swing.JLabel();
-        NomeAluno = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        CelProfessor = new javax.swing.JFormattedTextField();
+        try{
+            javax.swing.text.MaskFormatter celular = new javax.swing.text.MaskFormatter("(##)####-####");
+
+            CelProfessor = new javax.swing.JFormattedTextField(celular);
+        }catch(Exception e){
+        }
         jLabelEnderecoProfessor = new javax.swing.JLabel();
-        NomeAluno1 = new javax.swing.JTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        NomeProfessor = new javax.swing.JTextField();
+        TelProfessor = new javax.swing.JFormattedTextField();
+        try{
+            javax.swing.text.MaskFormatter tel = new javax.swing.text.MaskFormatter("(##)####-####");
+
+            TelProfessor = new javax.swing.JFormattedTextField(tel);
+        }catch(Exception e){
+        }
         jLabelCidadeProfessor = new javax.swing.JLabel();
-        NomeAluno2 = new javax.swing.JTextField();
+        SexoProfessor = new javax.swing.JTextField();
         jLabelCPFProfessor = new javax.swing.JLabel();
         jLabelBairroProfessor = new javax.swing.JLabel();
-        NomeAluno4 = new javax.swing.JTextField();
+        EndProfessor = new javax.swing.JTextField();
         jLabelCadastroProfessor = new javax.swing.JLabel();
         jLabelTelefoneProfessor = new javax.swing.JLabel();
         jLabelCelularProfessor = new javax.swing.JLabel();
-        NomeAluno5 = new javax.swing.JTextField();
+        CidadeProfessor = new javax.swing.JTextField();
         jLabelTurnoProfessor = new javax.swing.JLabel();
-        jLabelCREFProfessor = new javax.swing.JLabel();
-        NomeAluno8 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        CpfProfessor = new javax.swing.JFormattedTextField();
+        try{
+            javax.swing.text.MaskFormatter cpf = new javax.swing.text.MaskFormatter("###.###.###-##");
+
+            CpfProfessor = new javax.swing.JFormattedTextField(cpf);
+        }catch(Exception e){
+        }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        NomeAluno6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno6ActionPerformed(evt);
-            }
-        });
-
         jLabelSexoProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelSexoProfessor.setText("Sexo:");
 
-        NomeAluno7.addActionListener(new java.awt.event.ActionListener() {
+        BairroProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno7ActionPerformed(evt);
+                BairroProfessorActionPerformed(evt);
             }
         });
 
@@ -88,33 +100,27 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jLabelNomeProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelNomeProfessor.setText("Nome: ");
 
-        NomeAluno.addActionListener(new java.awt.event.ActionListener() {
+        CelProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAlunoActionPerformed(evt);
-            }
-        });
-
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                CelProfessorActionPerformed(evt);
             }
         });
 
         jLabelEnderecoProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEnderecoProfessor.setText("Endereço:");
 
-        NomeAluno1.addActionListener(new java.awt.event.ActionListener() {
+        NomeProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno1ActionPerformed(evt);
+                NomeProfessorActionPerformed(evt);
             }
         });
 
         jLabelCidadeProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelCidadeProfessor.setText("Cidade: ");
 
-        NomeAluno2.addActionListener(new java.awt.event.ActionListener() {
+        SexoProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno2ActionPerformed(evt);
+                SexoProfessorActionPerformed(evt);
             }
         });
 
@@ -124,9 +130,9 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jLabelBairroProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelBairroProfessor.setText("Bairro:");
 
-        NomeAluno4.addActionListener(new java.awt.event.ActionListener() {
+        EndProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno4ActionPerformed(evt);
+                EndProfessorActionPerformed(evt);
             }
         });
 
@@ -140,21 +146,20 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jLabelCelularProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelCelularProfessor.setText("Celular:");
 
-        NomeAluno5.addActionListener(new java.awt.event.ActionListener() {
+        CidadeProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno5ActionPerformed(evt);
+                CidadeProfessorActionPerformed(evt);
             }
         });
 
         jLabelTurnoProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTurnoProfessor.setText("Turno:");
 
-        jLabelCREFProfessor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelCREFProfessor.setText("CREF:");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manha", "Tarde", "Noite" }));
 
-        NomeAluno8.addActionListener(new java.awt.event.ActionListener() {
+        CpfProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeAluno8ActionPerformed(evt);
+                CpfProfessorActionPerformed(evt);
             }
         });
 
@@ -173,46 +178,47 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                             .addComponent(jLabelSexoProfessor)
                             .addComponent(jLabelTelefoneProfessor))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(NomeAluno6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelCREFProfessor))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelCelularProfessor))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(NomeAluno4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NomeAluno2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(NomeAluno5, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabelBairroProfessor)))
-                                .addGap(0, 1, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(EndProfessor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(CidadeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabelBairroProfessor)))
+                                        .addGap(0, 1, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jButtonSalvarProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jButtonCancelarProfessor)
+                                        .addGap(28, 28, 28))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(TelProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelCelularProfessor)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CelProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                                    .addComponent(BairroProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                                .addContainerGap())
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonSalvarProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(jButtonCancelarProfessor)
-                                .addGap(28, 28, 28)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                            .addComponent(NomeAluno7, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                            .addComponent(NomeAluno8))
-                        .addContainerGap())
+                                .addComponent(SexoProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabelCPFProfessor)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(49, 49, 49)
+                                .addComponent(CpfProfessor)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -225,41 +231,40 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                 .addComponent(jLabelCadastroProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNomeProfessor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CpfProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCPFProfessor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SexoProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelSexoProfessor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CidadeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCidadeProfessor)
                     .addComponent(jLabelBairroProfessor)
-                    .addComponent(NomeAluno7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BairroProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EndProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEnderecoProfessor))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CelProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabelCelularProfessor))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabelTelefoneProfessor))
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelTelefoneProfessor)
+                            .addComponent(TelProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeAluno8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCREFProfessor)
-                    .addComponent(NomeAluno6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTurnoProfessor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                    .addComponent(jLabelTurnoProfessor)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarProfessor)
                     .addComponent(jButtonCancelarProfessor))
@@ -270,49 +275,41 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NomeAluno6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno6ActionPerformed
+    private void BairroProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BairroProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno6ActionPerformed
-
-    private void NomeAluno7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno7ActionPerformed
+    }//GEN-LAST:event_BairroProfessorActionPerformed
 
     private void jButtonSalvarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarProfessorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalvarProfessorActionPerformed
 
-    private void NomeAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAlunoActionPerformed
-
-    }//GEN-LAST:event_NomeAlunoActionPerformed
-
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void CelProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CelProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_CelProfessorActionPerformed
 
-    private void NomeAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno1ActionPerformed
+    private void NomeProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno1ActionPerformed
+    }//GEN-LAST:event_NomeProfessorActionPerformed
 
-    private void NomeAluno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno2ActionPerformed
+    private void SexoProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexoProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno2ActionPerformed
+    }//GEN-LAST:event_SexoProfessorActionPerformed
 
-    private void NomeAluno4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno4ActionPerformed
+    private void EndProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EndProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno4ActionPerformed
+    }//GEN-LAST:event_EndProfessorActionPerformed
 
-    private void NomeAluno5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno5ActionPerformed
+    private void CidadeProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CidadeProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno5ActionPerformed
+    }//GEN-LAST:event_CidadeProfessorActionPerformed
 
     private void jButtonCancelarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProfessorActionPerformed
         FichaCadastroProfessor.this.dispose();
     }//GEN-LAST:event_jButtonCancelarProfessorActionPerformed
 
-    private void NomeAluno8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAluno8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomeAluno8ActionPerformed
+    private void CpfProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CpfProfessorActionPerformed
+      
+    }//GEN-LAST:event_CpfProfessorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,21 +347,19 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NomeAluno;
-    private javax.swing.JTextField NomeAluno1;
-    private javax.swing.JTextField NomeAluno2;
-    private javax.swing.JTextField NomeAluno4;
-    private javax.swing.JTextField NomeAluno5;
-    private javax.swing.JTextField NomeAluno6;
-    private javax.swing.JTextField NomeAluno7;
-    private javax.swing.JTextField NomeAluno8;
+    private javax.swing.JTextField BairroProfessor;
+    private javax.swing.JFormattedTextField CelProfessor;
+    private javax.swing.JTextField CidadeProfessor;
+    private javax.swing.JFormattedTextField CpfProfessor;
+    private javax.swing.JTextField EndProfessor;
+    private javax.swing.JTextField NomeProfessor;
+    private javax.swing.JTextField SexoProfessor;
+    private javax.swing.JFormattedTextField TelProfessor;
     private javax.swing.JButton jButtonCancelarProfessor;
     private javax.swing.JButton jButtonSalvarProfessor;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabelBairroProfessor;
     private javax.swing.JLabel jLabelCPFProfessor;
-    private javax.swing.JLabel jLabelCREFProfessor;
     private javax.swing.JLabel jLabelCadastroProfessor;
     private javax.swing.JLabel jLabelCelularProfessor;
     private javax.swing.JLabel jLabelCidadeProfessor;

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JFormattedTextField" name="CelAluno">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CelAlunoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa; javax.swing.text.MaskFormatter celular = new javax.swing.text.MaskFormatter(&quot;(##)####-####&quot;);&#xd;&#xa;&#xd;&#xa; CelAluno = new javax.swing.JFormattedTextField(celular);&#xd;&#xa; }catch(Exception e){&#xd;&#xa;}"/>
+      </AuxValues>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="resizable" type="boolean" value="false"/>
@@ -38,39 +48,41 @@
                           <Component id="jLabelTelefoneAluno" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="NomeAluno4" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
-                                  <Component id="NomeAluno2" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="NomeAluno5" min="-2" pref="255" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabelBairroAluno" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="EndAluno" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
+                                          <Component id="SexoAluno" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="CidAluno" min="-2" pref="255" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabelBairroAluno" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="94" max="32767" attributes="0"/>
+                                      <Component id="jButtonSalvarAluno" min="-2" pref="76" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="jButtonCancelarAluno" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="TelAluno" min="-2" pref="108" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabelCelularAluno" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="BairroAluno" min="-2" pref="131" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
+                              <Component id="jComboBox1" min="-2" pref="108" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jButtonSalvarAluno" min="-2" pref="76" max="-2" attributes="0"/>
-                                  <Component id="NomeAluno6" min="-2" pref="170" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jButtonCancelarAluno" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jFormattedTextField2" min="-2" pref="108" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabelCelularAluno" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jFormattedTextField1" min="-2" pref="131" max="-2" attributes="0"/>
-                          <Component id="NomeAluno7" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -79,12 +91,12 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabelNomeAluno" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="NomeAluno1" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="NomeAluno" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelCPFAluno" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="NomeAluno" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="CpfAluno" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -104,29 +116,29 @@
               <Component id="jLabelCadastroAluno" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomeAluno1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="NomeAluno" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabelNomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomeAluno" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="CpfAluno" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="jLabelCPFAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomeAluno2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="SexoAluno" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="jLabelSexoAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomeAluno5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="CidAluno" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="jLabelCidadeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelBairroAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NomeAluno7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="BairroAluno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomeAluno4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="EndAluno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabelEnderecoAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -141,17 +153,16 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jFormattedTextField2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="TelAluno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabelTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jFormattedTextField1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabelCelularAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelTurnoAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NomeAluno6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                      <EmptySpace pref="78" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -262,47 +273,54 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarAlunoActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JTextField" name="CpfAluno">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CpfAlunoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa; javax.swing.text.MaskFormatter cpf = new javax.swing.text.MaskFormatter(&quot;###.###.###-##&quot;);&#xd;&#xa;&#xd;&#xa; CpfAluno = new javax.swing.JFormattedTextField(cpf);&#xd;&#xa; }catch(Exception e){&#xd;&#xa;}"/>
+      </AuxValues>
+    </Component>
     <Component class="javax.swing.JTextField" name="NomeAluno">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAlunoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno1">
+    <Component class="javax.swing.JTextField" name="SexoAluno">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SexoAlunoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno2">
+    <Component class="javax.swing.JTextField" name="EndAluno">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EndAlunoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno4">
+    <Component class="javax.swing.JTextField" name="CidAluno">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CidAlunoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno5">
+    <Component class="javax.swing.JTextField" name="BairroAluno">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BairroAlunoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno6">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno6ActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JFormattedTextField" name="TelAluno">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa; javax.swing.text.MaskFormatter telefone = new javax.swing.text.MaskFormatter(&quot;(##)####-####&quot;);&#xd;&#xa;&#xd;&#xa; TelAluno = new javax.swing.JFormattedTextField(telefone);&#xd;&#xa; }catch(Exception e){&#xd;&#xa;}"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="NomeAluno7">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeAluno7ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Manh&#xe3;"/>
+            <StringItem index="1" value="Tarde"/>
+            <StringItem index="2" value="Noite"/>
+          </StringArray>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
