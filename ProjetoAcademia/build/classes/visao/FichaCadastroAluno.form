@@ -77,16 +77,18 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="BairroAluno" min="-2" pref="131" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="BairroAluno" pref="131" max="32767" attributes="0"/>
+                                  <Component id="CELAluno" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jComboBox1" min="-2" pref="108" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabelNomeAluno" min="-2" pref="45" max="-2" attributes="0"/>
@@ -99,9 +101,13 @@
                               <Component id="CpfAluno" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="DatMatricula" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -118,6 +124,8 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="NomeAluno" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabelNomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DatMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -156,6 +164,7 @@
                           <Component id="TelAluno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabelTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelCelularAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CELAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -320,6 +329,27 @@
             <StringItem index="2" value="Noite"/>
           </StringArray>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="CELAluno">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa; javax.swing.text.MaskFormatter celular = new javax.swing.text.MaskFormatter(&quot;(##)####-####&quot;);&#xd;&#xa;&#xd;&#xa; CELAluno = new javax.swing.JFormattedTextField(celular);&#xd;&#xa; }catch(Exception e){&#xd;&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="DatMatricula">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DatMatriculaActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xd;&#xa; javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter(&quot;##/##/####&quot;);&#xd;&#xa;&#xd;&#xa; DatMatricula = new javax.swing.JFormattedTextField(data);&#xd;&#xa; }catch(Exception e){&#xd;&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Data Matricula"/>
       </Properties>
     </Component>
   </SubComponents>

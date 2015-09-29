@@ -39,7 +39,7 @@ public class CadastroAluno extends javax.swing.JFrame {
         jLabelBemvindo.setText("Bem Vindo Usuário");
 
         jButtonAlterar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButtonAlterar.setText("Histórico de Mensalidades");
+        jButtonAlterar.setText("Mensalidades");
         jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAlterarActionPerformed(evt);
@@ -81,11 +81,11 @@ public class CadastroAluno extends javax.swing.JFrame {
                 .addComponent(jLabelBemvindo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(33, 33, 33)
                 .addComponent(jButtonAlterar2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(35, 35, 35)
                 .addComponent(jButtonAlterar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(516, 338));
@@ -93,7 +93,9 @@ public class CadastroAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
-        // TODO add your handling code here:
+        HistoricoMensalidades tela = new HistoricoMensalidades();
+        tela.setVisible(true);
+       
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
     private void jButtonAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterar1ActionPerformed

@@ -40,6 +40,8 @@ public class AdminCadastro extends javax.swing.JFrame {
         jMenuItemCadProfessor = new javax.swing.JMenuItem();
         jMenuEquipamentosCadEquipamento = new javax.swing.JMenu();
         jMenuItemCadastroEquipamento = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setResizable(false);
 
@@ -115,6 +117,18 @@ public class AdminCadastro extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuEquipamentosCadEquipamento);
 
+        jMenu1.setText("Mensalidades");
+
+        jMenuItem1.setText("Pagamento");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +198,11 @@ public class AdminCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       Pagamento tela = new Pagamento();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -224,9 +243,11 @@ public class AdminCadastro extends javax.swing.JFrame {
     private javax.swing.JButton jButtonExluir;
     private javax.swing.JButton jButtonPesquisa;
     private javax.swing.JLabel jLabelBemvindo;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastroAluno;
     private javax.swing.JMenu jMenuEquipamentosCadEquipamento;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCadAluno;
     private javax.swing.JMenuItem jMenuItemCadProfessor;
     private javax.swing.JMenuItem jMenuItemCadastroEquipamento;
