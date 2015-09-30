@@ -5,6 +5,10 @@
  */
 package visao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Peter
@@ -31,7 +35,9 @@ public class CadastroProfessor extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jLabelBemvindo = new javax.swing.JLabel();
-        jButtonAlterar2 = new javax.swing.JButton();
+        BaterPonto = new javax.swing.JButton();
+        jLabelListagemDePonto = new javax.swing.JLabel();
+        meses = new javax.swing.JComboBox();
 
         setResizable(false);
 
@@ -39,11 +45,22 @@ public class CadastroProfessor extends javax.swing.JFrame {
         jLabelBemvindo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBemvindo.setText("Bem Vindo Professor!");
 
-        jButtonAlterar2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButtonAlterar2.setText("Controle de Ponto");
-        jButtonAlterar2.addActionListener(new java.awt.event.ActionListener() {
+        BaterPonto.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BaterPonto.setText("Bater Ponto");
+        BaterPonto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAlterar2ActionPerformed(evt);
+                BaterPontoActionPerformed(evt);
+            }
+        });
+
+        jLabelListagemDePonto.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabelListagemDePonto.setText(" Listagem de Ponto:");
+
+        meses.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        meses.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        meses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mesesActionPerformed(evt);
             }
         });
 
@@ -53,8 +70,11 @@ public class CadastroProfessor extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabelBemvindo, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButtonAlterar2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(meses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelListagemDePonto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BaterPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -62,17 +82,40 @@ public class CadastroProfessor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabelBemvindo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonAlterar2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addComponent(BaterPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelListagemDePonto, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(meses, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(516, 338));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAlterar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAlterar2ActionPerformed
+    private void BaterPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaterPontoActionPerformed
+        Date data = new Date(); SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss");
+        JOptionPane.showMessageDialog(rootPane,"Ponto efetuado com sucesso!  "  +(sdf.format(data)));
+    }//GEN-LAST:event_BaterPontoActionPerformed
+
+    private void mesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mesesActionPerformed
+        initComponents();
+        this.meses.removeAllItems();
+        this.meses.addItem("Janeiro");
+        this.meses.addItem("Fevereiro");
+        this.meses.addItem("Março");
+        this.meses.addItem("Abril");
+        this.meses.addItem("Maio");
+        this.meses.addItem("Junho");
+        this.meses.addItem("Julho");
+        this.meses.addItem("Agosto");
+        this.meses.addItem("Setembro");
+        this.meses.addItem("Outubro");
+        this.meses.addItem("Novembro");
+        this.meses.addItem("Dezembro");
+
+    }//GEN-LAST:event_mesesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,10 +153,12 @@ public class CadastroProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BaterPonto;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.JButton jButtonAlterar2;
     private javax.swing.JLabel jLabelBemvindo;
+    private javax.swing.JLabel jLabelListagemDePonto;
+    private javax.swing.JComboBox meses;
     // End of variables declaration//GEN-END:variables
 }
