@@ -5,6 +5,7 @@
  */
 package visao;
 
+import Controle.ConexaoBD;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Peter
  */
 public class TelaLoginAdmin extends javax.swing.JFrame {
-
+    ConexaoBD conecta = new ConexaoBD();
     /**
      * Creates new form TelaLoginAdmin
      */

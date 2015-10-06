@@ -5,17 +5,22 @@
  */
 package visao;
 
+import Controle.ConexaoBD;
+
 /**
  *
  * @author Peter
  */
 public class AdminCadastro extends javax.swing.JFrame {
+    ConexaoBD conecta = new ConexaoBD();
+    
 
     /**
      * Creates new form AdminCadastro
      */
     public AdminCadastro() {
         initComponents();
+        conecta.conexao();
     }
 
     /**

@@ -5,12 +5,18 @@
  */
 package visao;
 
+import Controle.ConexaoBD;
+import Controle.ControleAluno;
+import model.ModeloAluno;
+
 /**
  *
  * @author Peter
  */
 public class FichaCadastroAluno extends javax.swing.JFrame {
-
+    ModeloAluno modaluno = new ModeloAluno();
+    ConexaoBD conex = new ConexaoBD();
+    ControleAluno control = new ControleAluno();
     /**
      * Creates new form FichaCadastroAluno
      */
@@ -65,7 +71,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             TelAluno = new javax.swing.JFormattedTextField(telefone);
         }catch(Exception e){
         }
-        jComboBox1 = new javax.swing.JComboBox();
+        turno = new javax.swing.JComboBox();
         CELAluno = new javax.swing.JTextField();
         try{
             javax.swing.text.MaskFormatter celular = new javax.swing.text.MaskFormatter("(##)####-####");
@@ -174,7 +180,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manhã", "Tarde", "Noite" }));
+        turno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manhã", "Tarde", "Noite" }));
 
         DatMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +233,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                                     .addComponent(BairroAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                     .addComponent(CELAluno)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(turno, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -294,7 +300,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelTurnoAluno)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(turno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(78, Short.MAX_VALUE))))
         );
 
@@ -331,7 +337,19 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_CelAlunoActionPerformed
 
     private void jButtonSalvarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarAlunoActionPerformed
-        // TODO add your handling code here:
+        modaluno.setNome(NomeAluno.getText());
+        modaluno.setData_Matricula(DatMatricula.getText());
+        modaluno.setCPF(CpfAluno.getText());
+        modaluno.setSexo(SexoAluno.getText());
+        modaluno.setCidade(CidAluno.getText());
+        modaluno.setBairro(BairroAluno.getText());
+        modaluno.setEndereco(EndAluno.getText());
+        modaluno.setTelefone(TelAluno.getText());
+        modaluno.setCelular(CELAluno.getText());
+        modaluno.setTurno((String) turno.getSelectedItem());
+        control.salvar(modaluno);
+        dispose();
+        
     }//GEN-LAST:event_jButtonSalvarAlunoActionPerformed
 
     private void jButtonCancelarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAlunoActionPerformed
@@ -390,7 +408,6 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField TelAluno;
     private javax.swing.JButton jButtonCancelarAluno;
     private javax.swing.JButton jButtonSalvarAluno;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelBairroAluno;
     private javax.swing.JLabel jLabelCPFAluno;
@@ -402,5 +419,6 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSexoAluno;
     private javax.swing.JLabel jLabelTelefoneAluno;
     private javax.swing.JLabel jLabelTurnoAluno;
+    private javax.swing.JComboBox turno;
     // End of variables declaration//GEN-END:variables
 }
