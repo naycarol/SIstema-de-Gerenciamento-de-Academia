@@ -1,16 +1,22 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package visao;
 
+import javax.swing.JOptionPane;
+import modeloDao.DaoAparelho;
+import modeloBeans.BeansAparelho;
+
 /**
  *
  * @author Peter
  */
 public class FichaCadastroEquipamento extends javax.swing.JFrame {
-
+    BeansAparelho modaparelho = new BeansAparelho();
+    DaoAparelho controlaparelho = new DaoAparelho();
+    int flag = 0;
     /**
      * Creates new form FichaCadastroEquipamento
      */
@@ -49,12 +55,22 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
         jLabelLocalEquipamento = new javax.swing.JLabel();
         Garantia = new javax.swing.JTextField();
         Valorapa = new javax.swing.JTextField();
+        jButtonNovoequipamento = new javax.swing.JButton();
+        jButtonExluirequipamento = new javax.swing.JButton();
+        jButtonPesquisarequipamento = new javax.swing.JButton();
+        jTextFieldpesquisaequipamento = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButtonEditarAparelho = new javax.swing.JButton();
+        jLabelIDaparelho = new javax.swing.JLabel();
+        jTextFieldIDaparelho = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jButtonSalvarEquipamento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButtonSalvarEquipamento.setText("Salvar");
+        jButtonSalvarEquipamento.setEnabled(false);
         jButtonSalvarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarEquipamentoActionPerformed(evt);
@@ -63,139 +79,310 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
 
         jButtonCancelarEquipamento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButtonCancelarEquipamento.setText("Cancelar");
+        jButtonCancelarEquipamento.setEnabled(false);
         jButtonCancelarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarEquipamentoActionPerformed(evt);
             }
         });
 
-        jLabelNomeEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelNomeEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabelNomeEquipamento.setText("Nome: ");
 
         jLabelCadastroEquipamento.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabelCadastroEquipamento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCadastroEquipamento.setText("Cadastro de Equipamentos");
 
+        NomeEquipamento.setEnabled(false);
         NomeEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomeEquipamentoActionPerformed(evt);
             }
         });
 
-        jLabelSerialEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelSerialEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabelSerialEquipamento.setText("Nº Serial:");
 
+        NSerial.setEnabled(false);
         NSerial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NSerialActionPerformed(evt);
             }
         });
 
-        jLabelDescriçãoEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelDescriçãoEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabelDescriçãoEquipamento.setText("Descrição:");
 
         DescApa.setColumns(20);
         DescApa.setRows(5);
+        DescApa.setEnabled(false);
         jScrollPane1.setViewportView(DescApa);
 
-        jLabelValorEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelValorEquipamento.setText("Valor Pago");
+        Local.setEnabled(false);
 
-        GarantiaEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        GarantiaEquipamento.setText("Garantia");
+        jLabelValorEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabelValorEquipamento.setText("Valor Pago:");
 
-        jLabelLocalEquipamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelLocalEquipamento.setText("Local Atual");
+        GarantiaEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        GarantiaEquipamento.setText("Garantia:");
+
+        jLabelLocalEquipamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabelLocalEquipamento.setText("Local Atual:");
+
+        Garantia.setEnabled(false);
+
+        Valorapa.setEnabled(false);
+
+        jButtonNovoequipamento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonNovoequipamento.setText("Novo");
+        jButtonNovoequipamento.setMaximumSize(new java.awt.Dimension(67, 23));
+        jButtonNovoequipamento.setPreferredSize(new java.awt.Dimension(83, 23));
+        jButtonNovoequipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoequipamentoActionPerformed(evt);
+            }
+        });
+
+        jButtonExluirequipamento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonExluirequipamento.setText("Excluir");
+        jButtonExluirequipamento.setEnabled(false);
+        jButtonExluirequipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExluirequipamentoActionPerformed(evt);
+            }
+        });
+
+        jButtonPesquisarequipamento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonPesquisarequipamento.setText("Pesquisar");
+        jButtonPesquisarequipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarequipamentoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldpesquisaequipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldpesquisaequipamentoActionPerformed(evt);
+            }
+        });
+
+        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jButtonEditarAparelho.setText("Editar");
+        jButtonEditarAparelho.setEnabled(false);
+        jButtonEditarAparelho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarAparelhoActionPerformed(evt);
+            }
+        });
+
+        jLabelIDaparelho.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabelIDaparelho.setText("ID:");
+
+        jTextFieldIDaparelho.setEnabled(false);
+        jTextFieldIDaparelho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDaparelhoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabelSerialEquipamento)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelDescriçãoEquipamento)
-                            .addGap(18, 18, 18)
-                            .addComponent(jScrollPane1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButtonSalvarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(32, 32, 32)
-                            .addComponent(jButtonCancelarEquipamento)
-                            .addGap(148, 148, 148)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabelLocalEquipamento)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Local))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabelValorEquipamento)
-                                .addGap(10, 10, 10)
-                                .addComponent(Valorapa)))
-                        .addGap(18, 18, 18)
-                        .addComponent(GarantiaEquipamento)
-                        .addGap(18, 18, 18)
-                        .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelCadastroEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonExluirequipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonNovoequipamento, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                            .addComponent(jButtonSalvarEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonCancelarEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonEditarAparelho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextFieldpesquisaequipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButtonPesquisarequipamento))
+                                    .addComponent(jScrollPane2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(60, 60, 60)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelDescriçãoEquipamento)
+                                            .addComponent(jLabelIDaparelho))
+                                        .addGap(72, 72, 72))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelLocalEquipamento)
+                                            .addComponent(jLabelValorEquipamento))
+                                        .addGap(68, 68, 68)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Local, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabelSerialEquipamento)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Valorapa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(74, 74, 74)
+                                        .addComponent(GarantiaEquipamento)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldIDaparelho, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(jLabelCadastroEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabelCadastroEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNomeEquipamento)
-                    .addComponent(jLabelSerialEquipamento)
-                    .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelIDaparelho)
+                    .addComponent(jTextFieldIDaparelho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabelDescriçãoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelNomeEquipamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelDescriçãoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelValorEquipamento)
+                            .addComponent(Valorapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GarantiaEquipamento)
+                            .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelLocalEquipamento))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSerialEquipamento)
+                            .addComponent(NSerial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(Local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonNovoequipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSalvarEquipamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCancelarEquipamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonExluirequipamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonEditarAparelho)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelValorEquipamento)
-                    .addComponent(Valorapa, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GarantiaEquipamento)
-                    .addComponent(Garantia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelLocalEquipamento)
-                    .addComponent(Local, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSalvarEquipamento)
-                    .addComponent(jButtonCancelarEquipamento))
-                .addContainerGap())
+                    .addComponent(jTextFieldpesquisaequipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonPesquisarequipamento))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
-        setSize(new java.awt.Dimension(566, 388));
+        setSize(new java.awt.Dimension(891, 438));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarEquipamentoActionPerformed
-        // TODO add your handling code here:
+        if(flag == 1){
+        modaparelho.setNome(NomeEquipamento.getText());
+        modaparelho.setNumeroSerial(NSerial.getText());
+        modaparelho.setDescricao(DescApa.getText());
+        modaparelho.setValorPago(Valorapa.getText());
+        modaparelho.setGarantia(Garantia.getText());
+        modaparelho.setLocalAtual(Local.getText());
+        controlaparelho.salvar(modaparelho);
+        NomeEquipamento.setEnabled(!true);
+        NSerial.setEnabled(!true);
+        DescApa.setEnabled(!true);
+        Valorapa.setEnabled(!true);
+        Local.setEnabled(!true);
+        Garantia.setEnabled(!true);
+        jButtonSalvarEquipamento.setEnabled(!true);
+        jButtonCancelarEquipamento.setEnabled(!true);
+        jButtonNovoequipamento.setEnabled(true);
+        jButtonEditarAparelho.setEnabled(false);
+        jTextFieldpesquisaequipamento.setText("");
+        NomeEquipamento.setText("");
+        NSerial.setText("");
+        DescApa.setText("");
+        Valorapa.setText("");
+        Garantia.setText("");
+        Local.setText("");
+        }else{
+            modaparelho.setCodigo((Integer.parseInt(jTextFieldIDaparelho.getText())));
+            modaparelho.setNome(NomeEquipamento.getText());
+            modaparelho.setNumeroSerial(NSerial.getText());
+            modaparelho.setDescricao(DescApa.getText());
+            modaparelho.setValorPago(Valorapa.getText());
+            modaparelho.setGarantia(Garantia.getText());
+            modaparelho.setLocalAtual(Local.getText());
+            controlaparelho.EditarAparelho(modaparelho);
+            jButtonSalvarEquipamento.setEnabled(false);
+            jButtonCancelarEquipamento.setEnabled(false);
+            jButtonNovoequipamento.setEnabled(true);
+            NomeEquipamento.setEnabled(!true);
+            NSerial.setEnabled(!true);
+            DescApa.setEnabled(!true);
+            Valorapa.setEnabled(!true);
+            Local.setEnabled(!true);
+            Garantia.setEnabled(!true);
+            jTextFieldpesquisaequipamento.setText("");
+            NomeEquipamento.setText("");
+            NSerial.setText("");
+            DescApa.setText("");
+            Valorapa.setText("");
+            Garantia.setText("");
+            Local.setText("");
+        }
     }//GEN-LAST:event_jButtonSalvarEquipamentoActionPerformed
 
     private void jButtonCancelarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarEquipamentoActionPerformed
-        FichaCadastroEquipamento.this.dispose();
+        NomeEquipamento.setEnabled(!true);
+        NSerial.setEnabled(!true);
+        DescApa.setEnabled(!true);
+        Valorapa.setEnabled(!true);
+        Local.setEnabled(!true);
+        Garantia.setEnabled(!true);
+        jButtonSalvarEquipamento.setEnabled(!true);
+        jButtonCancelarEquipamento.setEnabled(!true);
+        jButtonNovoequipamento.setEnabled(true);
+        jButtonEditarAparelho.setEnabled(false);
+        NomeEquipamento.setText("");
+        NSerial.setText("");
+        DescApa.setText("");
+        Valorapa.setText("");
+        Garantia.setText("");
+        Local.setText("");
     }//GEN-LAST:event_jButtonCancelarEquipamentoActionPerformed
 
     private void NomeEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeEquipamentoActionPerformed
@@ -205,6 +392,80 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
     private void NSerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NSerialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NSerialActionPerformed
+
+    private void jButtonNovoequipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoequipamentoActionPerformed
+        flag = 1;
+        NomeEquipamento.setEnabled(true);
+        NSerial.setEnabled(true);
+        DescApa.setEnabled(true);
+        Valorapa.setEnabled(true);
+        Local.setEnabled(true);
+        Garantia.setEnabled(true);
+        jButtonSalvarEquipamento.setEnabled(true);
+        jButtonCancelarEquipamento.setEnabled(true);
+        
+    }//GEN-LAST:event_jButtonNovoequipamentoActionPerformed
+
+    private void jButtonPesquisarequipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarequipamentoActionPerformed
+        modaparelho.setPesquisa(jTextFieldpesquisaequipamento.getText());
+        BeansAparelho modeloAparelho = controlaparelho.buscaAparelho(modaparelho);
+        jTextFieldIDaparelho.setText(String.valueOf(modaparelho.getCodigo()));
+        NomeEquipamento.setText(modeloAparelho.getNome());
+        NSerial.setText(modeloAparelho.getNumeroSerial());
+        DescApa.setText(modeloAparelho.getDescricao());
+        Valorapa.setText(modeloAparelho.getValorPago());
+        Garantia.setText(modeloAparelho.getGarantia());
+        Local.setText(modeloAparelho.getLocalAtual());
+        jButtonEditarAparelho.setEnabled(true);
+        jButtonSalvarEquipamento.setEnabled(false);
+        jButtonNovoequipamento.setEnabled(false);
+        jButtonExluirequipamento.setEnabled(true);
+    }//GEN-LAST:event_jButtonPesquisarequipamentoActionPerformed
+
+    private void jTextFieldpesquisaequipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldpesquisaequipamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpesquisaequipamentoActionPerformed
+
+    private void jButtonExluirequipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExluirequipamentoActionPerformed
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(rootPane,"Deseja Realmente Efetuar Exclusão? ");
+        if(resposta == JOptionPane.YES_OPTION){
+            modaparelho.setCodigo(Integer.parseInt(jTextFieldIDaparelho.getText()));
+            controlaparelho.ExcluirEquipamento(modaparelho);
+            NomeEquipamento.setText("");
+            NSerial.setText("");
+            DescApa.setText("");
+            Valorapa.setText("");
+            Garantia.setText("");
+            Local.setText("");
+            jTextFieldIDaparelho.setText("");
+            jTextFieldpesquisaequipamento.setText("");
+            jButtonExluirequipamento.setEnabled(false);
+            jButtonEditarAparelho.setEnabled(false);
+            jButtonNovoequipamento.setEnabled(true);
+            
+        }
+    }//GEN-LAST:event_jButtonExluirequipamentoActionPerformed
+
+    private void jButtonEditarAparelhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarAparelhoActionPerformed
+        flag = 2;
+        NomeEquipamento.setEnabled(true);
+        NSerial.setEnabled(true);
+        DescApa.setEnabled(true);
+        Valorapa.setEnabled(true);
+        Local.setEnabled(true);
+        Garantia.setEnabled(true);
+        jButtonSalvarEquipamento.setEnabled(true);
+        jButtonCancelarEquipamento.setEnabled(true);
+        jButtonEditarAparelho.setEnabled(false);
+        jButtonExluirequipamento.setEnabled(false);
+        jButtonNovoequipamento.setEnabled(false);
+
+    }//GEN-LAST:event_jButtonEditarAparelhoActionPerformed
+
+    private void jTextFieldIDaparelhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDaparelhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDaparelhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,13 +511,22 @@ public class FichaCadastroEquipamento extends javax.swing.JFrame {
     private javax.swing.JTextField NomeEquipamento;
     private javax.swing.JTextField Valorapa;
     private javax.swing.JButton jButtonCancelarEquipamento;
+    private javax.swing.JButton jButtonEditarAparelho;
+    private javax.swing.JButton jButtonExluirequipamento;
+    private javax.swing.JButton jButtonNovoequipamento;
+    private javax.swing.JButton jButtonPesquisarequipamento;
     private javax.swing.JButton jButtonSalvarEquipamento;
     private javax.swing.JLabel jLabelCadastroEquipamento;
     private javax.swing.JLabel jLabelDescriçãoEquipamento;
+    private javax.swing.JLabel jLabelIDaparelho;
     private javax.swing.JLabel jLabelLocalEquipamento;
     private javax.swing.JLabel jLabelNomeEquipamento;
     private javax.swing.JLabel jLabelSerialEquipamento;
     private javax.swing.JLabel jLabelValorEquipamento;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextFieldIDaparelho;
+    private javax.swing.JTextField jTextFieldpesquisaequipamento;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,7 @@
  */
 package visao;
 
-import Controle.ConexaoBD;
+import modeloConnection.ConexaoBD;
 import javax.swing.JOptionPane;
 
 /**

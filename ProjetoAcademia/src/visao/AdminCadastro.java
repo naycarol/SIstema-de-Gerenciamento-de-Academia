@@ -5,22 +5,17 @@
  */
 package visao;
 
-import Controle.ConexaoBD;
-
 /**
  *
  * @author Peter
  */
 public class AdminCadastro extends javax.swing.JFrame {
-    ConexaoBD conecta = new ConexaoBD();
-    
-
     /**
+     *
      * Creates new form AdminCadastro
      */
     public AdminCadastro() {
         initComponents();
-        conecta.conexao();
     }
 
     /**
@@ -33,10 +28,8 @@ public class AdminCadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelBemvindo = new javax.swing.JLabel();
-        jTextFieldPesquisa = new javax.swing.JTextField();
-        jButtonPesquisa = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelapesquisa = new javax.swing.JTable();
         jButtonExluir = new javax.swing.JButton();
         jButtonAlterar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -54,14 +47,7 @@ public class AdminCadastro extends javax.swing.JFrame {
         jLabelBemvindo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBemvindo.setText("ACADEMIA SPORT FITNESS - BEM VINDO!");
 
-        jButtonPesquisa.setText("Pesquisar");
-        jButtonPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisaActionPerformed(evt);
-            }
-        });
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelapesquisa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -72,7 +58,7 @@ public class AdminCadastro extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabelapesquisa);
 
         jButtonExluir.setText("Excluir");
         jButtonExluir.addActionListener(new java.awt.event.ActionListener() {
@@ -144,41 +130,29 @@ public class AdminCadastro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonExluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonAlterar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonPesquisa)))
+                        .addComponent(jButtonExluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonAlterar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabelBemvindo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonPesquisa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonExluir)
                     .addComponent(jButtonAlterar))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(516, 338));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonPesquisaActionPerformed
 
     private void jMenuItemCadastroEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroEquipamentoActionPerformed
         FichaCadastroEquipamento tela = new FichaCadastroEquipamento();
@@ -246,7 +220,6 @@ public class AdminCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonExluir;
-    private javax.swing.JButton jButtonPesquisa;
     private javax.swing.JLabel jLabelBemvindo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -257,7 +230,6 @@ public class AdminCadastro extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadProfessor;
     private javax.swing.JMenuItem jMenuItemCadastroEquipamento;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextFieldPesquisa;
+    private javax.swing.JTable tabelapesquisa;
     // End of variables declaration//GEN-END:variables
 }

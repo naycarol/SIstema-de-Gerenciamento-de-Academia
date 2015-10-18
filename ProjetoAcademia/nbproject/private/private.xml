@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/modeloDao/DaoAparelho.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>54</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia-master/ProjetoAcademia/src/Controle/ControleAluno.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia-master/ProjetoAcademia/src/model/ModeloAluno.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia-master/ProjetoAcademia/src/Controle/ConexaoBD.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia/ProjetoAcademia/src/modeloDao/DaoAluno.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia/ProjetoAcademia/src/modeloConnection/ConexaoBD.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia/ProjetoAcademia/src/modeloDao/DaoAparelho.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia/ProjetoAcademia/src/visao/FichaCadastroAluno.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/Academia/SIstema-de-Gerenciamento-de-Academia/ProjetoAcademia/src/visao/FichaCadastroEquipamento.java</file>
         </group>
     </open-files>
 </project-private>

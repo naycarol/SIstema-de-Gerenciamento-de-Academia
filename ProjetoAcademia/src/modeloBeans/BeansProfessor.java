@@ -3,37 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package modeloBeans;
 
 /**
  *
- * @author Peter, Luiz & Vinicius
+ * @author Peter
  */
-public class ModeloAluno {
+public class BeansProfessor {
+    
     private int Codigo;
     private String Nome;
     private String CPF;
-    private String Data_Matricula;
     private String Sexo;
     private String Cidade;
-    private String Endereco;
     private String Bairro;
+    private String Endereco;
     private String Telefone;
     private String Celular;
     private String Turno;
+    private String Pesquisar;
 
     /**
-     * @return the Codigo
+     * @return the codigo
      */
     public int getCodigo() {
         return Codigo;
     }
 
     /**
-     * @param Codigo the Codigo to set
+     * @param codigo the codigo to set
      */
-    public void setCodigo(int Codigo) {
-        this.Codigo = Codigo;
+    public void setCodigo(int codigo) {
+        this.Codigo = codigo;
     }
 
     /**
@@ -65,20 +66,6 @@ public class ModeloAluno {
     }
 
     /**
-     * @return the Data_Matricula
-     */
-    public String getData_Matricula() {
-        return Data_Matricula;
-    }
-
-    /**
-     * @param Data_Matricula the Data_Matricula to set
-     */
-    public void setData_Matricula(String Data_Matricula) {
-        this.Data_Matricula = Data_Matricula;
-    }
-
-    /**
      * @return the Sexo
      */
     public String getSexo() {
@@ -107,20 +94,6 @@ public class ModeloAluno {
     }
 
     /**
-     * @return the Endereco
-     */
-    public String getEndereco() {
-        return Endereco;
-    }
-
-    /**
-     * @param Endereco the Endereco to set
-     */
-    public void setEndereco(String Endereco) {
-        this.Endereco = Endereco;
-    }
-
-    /**
      * @return the Bairro
      */
     public String getBairro() {
@@ -132,6 +105,20 @@ public class ModeloAluno {
      */
     public void setBairro(String Bairro) {
         this.Bairro = Bairro;
+    }
+
+    /**
+     * @return the Endereco
+     */
+    public String getEndereco() {
+        return Endereco;
+    }
+
+    /**
+     * @param Endereco the Endereco to set
+     */
+    public void setEndereco(String Endereco) {
+        this.Endereco = Endereco;
     }
 
     /**
@@ -149,17 +136,17 @@ public class ModeloAluno {
     }
 
     /**
-     * @return the celular
+     * @return the Celular
      */
     public String getCelular() {
         return Celular;
     }
 
     /**
-     * @param celular the celular to set
+     * @param Celular the Celular to set
      */
-    public void setCelular(String celular) {
-        this.Celular = celular;
+    public void setCelular(String Celular) {
+        this.Celular = Celular;
     }
 
     /**
@@ -175,7 +162,20 @@ public class ModeloAluno {
     public void setTurno(String Turno) {
         this.Turno = Turno;
     }
-    
+
+    /**
+     * @return the Pesquisa
+     */
+    public String getPesquisa() {
+        return Pesquisar;
+    }
+
+    /**
+     * @param Pesquisa the Pesquisa to set
+     */
+    public void setPesquisa(String Pesquisa) {
+        this.Pesquisar = Pesquisa;
+    }
     
     
 }
